@@ -14,7 +14,9 @@ const Layout:React.FC<Props> = ({ children }) => {
             
             <Navbar />
             <main>{children}</main>
-            <Footer />
+            <Flex w='100%' mt='auto'>
+                <Footer />
+            </Flex>
         </Flex>
     );
 };
