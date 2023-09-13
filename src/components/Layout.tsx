@@ -1,5 +1,7 @@
 import React from 'react';
 import { Flex } from '@chakra-ui/react';
+import Navbar from './Navbar/Navbar';
+import Footer from './Footer/Footer';
 
 type Props = {
     children?: React.ReactNode
@@ -8,9 +10,11 @@ type Props = {
 const Layout:React.FC<Props> = ({ children }) => {
     
     return (
-        <Flex direction="column">  
-            {/* <Navbar /> */}
+        <Flex align='center' direction="column" w='100%' h='100%'>  
+            
+            <Navbar />
             <main>{children}</main>
+            <Footer />
         </Flex>
     );
 };

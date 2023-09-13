@@ -1,0 +1,33 @@
+@font-face {
+    font-family: "MATTER";
+    src: url('../fonts/matter/Matter-Regular.woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "CUTE";
+    src: url('../fonts/cute-notes/coolvetica\ rg.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "SFPRO";
+    src: url('../fonts/sf-pro/SFPRODISPLAYREGULAR.OTF');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "SFPROB1";
+    src: url('../fonts/sf-pro/SFPRODISPLAYMEDIUM.OTF');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "SFPROBOLD";
+    src: url('../fonts/sf-pro/SFPRODISPLAYBOLD.OTF');
+    font-weight: bold;
+    font-style: normal;
+}
