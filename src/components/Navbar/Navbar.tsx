@@ -1,18 +1,19 @@
 import React from 'react';
 import { Flex, Text } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
+import { BiBrain } from 'react-icons/bi';
 const Navbar:React.FC = () => {
     const router = useRouter();
 
     return (
-        <Flex align='center' direction="column" w='100%' h='64px' bg='white' opacity='100%' shadow='md'>
+        <Flex zIndex={3} align='center' direction="column" w='100%' h='64px' bg='white' opacity='100%' shadow='md'>
             <Flex justify='center' direction="column" w='100%' maxW='1080px' h='64px' px={4} bg='white'>
                 <Flex align='center'>
                     {/* <Flex align='center' justify='center' w='28px' h='28px' bg='black' borderRadius={4}>
-                        <GiTomato color='white' fontSize='16pt' style={{border: '0px solid black', borderRadius: '5px'}} />
+                        <BiBrain color='white' fontSize='16pt' style={{border: '0px solid #FB6252', borderRadius: '5px'}} />
                     </Flex> */}
-                    {/* <Gi3DStairs fontSize='18pt' style={{border: '0px solid black', borderRadius: '5px'}} /> */}
-                    <Text ml={2} color='#070E1D' fontFamily='CUTE' fontSize='24pt' _hover={{cursor: 'pointer'}} onClick={() => router.push('/')}>quarrel.fyi</Text>
+                    <BiBrain color='black' fontSize='22pt' />
+                    <Text mt={-1} ml={2} color='#070E1D' fontFamily='CUTE' fontSize='24pt' _hover={{cursor: 'pointer'}} onClick={() => router.push('/')}>quarrel.fyi</Text>
                     <Flex display={['none', 'none', 'flex', 'flex']} mr='auto' ml='auto'>
                         <Flex align='center' justify='center' h='30px' px={2} borderRadius={4} _hover={{cursor: 'pointer', bg: '#F9F9FA'}}>
                             <Text color='#070E1D' fontFamily='SFPROB1' fontSize='14px'>Explore</Text>

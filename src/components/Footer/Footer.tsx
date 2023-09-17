@@ -1,14 +1,18 @@
 import React from 'react';
 import { Flex, Text } from '@chakra-ui/react';
 import { AiFillGithub } from 'react-icons/ai';
+import { BiBrain } from 'react-icons/bi';
 const Footer:React.FC = () => {
     
     return (
         <Flex align='center' direction="column" w='100%' minH='400px' bg='white' opacity='100%' borderTop='2px solid #EBEBEB'>
-            <Flex justify='center' direction="column" w='100%' maxW='1080px' px={4}>
-                <Flex justify='center' wrap='wrap' direction={['column','column','row','row']} w='100%' mt='40px' px={0}>
+            <Flex justify='center' direction="column" w='100%' maxW='1400px' px={4}>
+                <Flex justify='center' direction={['column','column','row','row']} w='100%' mt='40px' px={0}>
                     <Flex direction='column' display={['none', 'flex', 'none', 'flex']} minW='300px' h='100%' ml={1}  bg='white'>
-                        <Text color='#070E1D' fontFamily='CUTE' fontSize='24pt'>quarrel.fyi</Text>
+                        <Flex align='center'>
+                            <BiBrain color='black' fontSize='22pt' />
+                            <Text mt={-1} ml={1} color='#070E1D' fontFamily='CUTE' fontSize='24pt'>quarrel.fyi</Text>
+                        </Flex>
                         <Text mt={4} color='#333' fontFamily='SFPROB1' fontSize='15px'>Copyright © Quarrel.fyi 2023.</Text>
                         <Text mt={0.5} color='#333' fontFamily='SFPROB1' fontSize='15px'>All rights reserved.</Text>
                     </Flex>

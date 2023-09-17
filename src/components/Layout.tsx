@@ -13,7 +13,7 @@ const Layout:React.FC<Props> = ({ children }) => {
         <Flex align='center' direction="column" w='100%' h='100%'>  
             
             <Navbar />
-            <main>{children}</main>
+            <main style={{width: '100%', height: '100%'}}>{children}</main>
             <Flex w='100%' mt='auto'>
                 <Footer />
             </Flex>
