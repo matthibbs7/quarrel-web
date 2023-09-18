@@ -8,7 +8,7 @@ const Footer:React.FC = () => {
         <Flex align='center' direction="column" w='100%' minH='400px' bg='white' opacity='100%' borderTop='2px solid #EBEBEB'>
             <Flex justify='center' direction="column" w='100%' maxW='1400px' px={4}>
                 <Flex justify='center' direction={['column','column','row','row']} w='100%' mt='40px' px={0}>
-                    <Flex direction='column' display={['none', 'flex', 'none', 'flex']} minW='300px' h='100%' ml={1}  bg='white'>
+                    <Flex direction='column' display={['flex', 'flex', 'none', 'flex']} minW='300px' h='100%' ml={1}  bg='white'>
                         <Flex align='center'>
                             <BiBrain color='black' fontSize='22pt' />
                             <Text mt={-1} ml={1} color='#070E1D' fontFamily='CUTE' fontSize='24pt'>quarrel.fyi</Text>

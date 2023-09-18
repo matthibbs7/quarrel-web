@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flex, Text } from '@chakra-ui/react';
+import { Button, Divider, Flex, Input, Text } from '@chakra-ui/react';
 import WindowWrapper from '@/components/WindowWrapper/WindowWrapper';
 export default function Login() {
     return (
@@ -11,8 +11,15 @@ export default function Login() {
                     <Text ml={5} color='white' fontFamily='SFPROBOLD' fontSize='24pt'>Welcome Back.</Text>
                 </Flex>
                 <Flex zIndex={5} align='center' justify='center' direction='column' w={['100%', '100%', '66.66%', '66.66%']} h='100%' bg='rgba(255, 255, 255, 0.2);' border='1px solid rgba(255, 255, 255, 0.1);' shadow='0 4px 30px rgba(0, 0, 0, 0.1);' backdropFilter='blur(0.4px);'>
-                    <Flex w='440px' h='540px' p={7} bg='white' border='1.5px solid #E5E5E3' borderRadius={10} style={{filter: 'none !important;'}}>
-                        <Text fontFamily='SFPROB1' fontSize='24pt'>Login</Text>
+                    <Flex direction='column' w={['368px', '440px']} h='540px' p={7} bg='white' border='1.5px solid #E5E5E3' borderRadius={10} style={{filter: 'none !important;'}}>
+                        <Text mb={5} fontFamily='SFPROB1' fontSize='24pt'>Login</Text>
+                        <Text mb={1} fontFamily='SFPROB1'>Email</Text>
+                        <Input fontSize='14.5px' bg='#F5F5F3' border='1px solid #F5F5F5' borderRadius={4} _placeholder={{color: '#757575'}} placeholder='Enter your email' />
+                        <Text mt={4} mb={1} fontFamily='SFPROB1'>Password</Text>
+                        <Input mb={2} fontSize='14.5px' bg='#F5F5F3' border='1px solid #F5F5F5' borderRadius={4} _placeholder={{color: '#757575'}} placeholder='Enter your password' />
+                        <Text mb={8} ml='auto' color='#2755F0' fontFamily='SFPROB1' fontSize='15px' _hover={{cursor: 'pointer'}}>Forgot password?</Text>
+                        <Button mb={8}>Continue</Button>
+                        <Divider />
                     </Flex>
                 </Flex>
             </Flex>
