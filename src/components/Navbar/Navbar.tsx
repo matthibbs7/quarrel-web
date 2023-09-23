@@ -35,7 +35,7 @@ const Navbar:React.FC = () => {
                             <Text fontFamily='SFPROB1' fontSize='14px'>Login</Text>
                         </Flex>
                         <Flex align='center' justify='center' w='110px' h='32px' ml='2' px={3} bg='radial-gradient(circle, rgba(252,55,46,1) 0%, rgba(250,140,119,1) 100%)' borderRadius={7} _hover={{cursor: 'pointer', bg: 'radial-gradient(circle, rgba(46,127,252,1) 0%, rgba(54,180,251,1) 100%)'}}>
-                            <Text color='white' fontFamily='SFPROB1' fontSize='14px'>Get started →</Text>
+                            <Text color='white' fontFamily='SFPROB1' fontSize='14px' onClick={() => router.push('/signup')}>Get started →</Text>
                         </Flex>
                     </Flex>
                 </Flex>
