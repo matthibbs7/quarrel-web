@@ -34,7 +34,7 @@ const Navbar:React.FC = () => {
                         <Flex align='center' justify='center' w='64px' h='32px' px={3} bg='white' border='1px solid #A6A9B3' borderRadius={7} _hover={{cursor: 'pointer', bg: '#F9F9FA'}} onClick={() => router.push('/login')}>
                             <Text fontFamily='SFPROB1' fontSize='14px'>Login</Text>
                         </Flex>
-                        <Flex align='center' justify='center' w='110px' h='32px' ml='2' px={3} bg='radial-gradient(circle, rgba(252,55,46,1) 0%, rgba(250,140,119,1) 100%)' borderRadius={7} _hover={{cursor: 'pointer', bg: 'radial-gradient(circle, rgba(46,127,252,1) 0%, rgba(54,180,251,1) 100%)'}}>
+                        <Flex align='center' justify='center' w='110px' h='32px' ml='2' px={3} bg='radial-gradient(circle, rgba(46,127,252,1) 0%, rgba(54,180,251,1) 100%)' borderRadius={7} _hover={{cursor: 'pointer', opacity: '0.9', bg: 'radial-gradient(circle, rgba(46,127,252,1) 0%, rgba(54,180,251,1) 100%)'}}>
                             <Text color='white' fontFamily='SFPROB1' fontSize='14px' onClick={() => router.push('/signup')}>Get started →</Text>
                         </Flex>
                     </Flex>

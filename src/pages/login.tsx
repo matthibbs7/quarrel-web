@@ -42,7 +42,7 @@ export default function Login() {
                             <Text mt={3} mb={1} fontFamily='SFPROB1' fontSize='16px'>Password</Text>
                             <Input mt={0.5} mb={2} color='#1b2642' fontFamily='SFPROB1' fontSize='16px' bg='white' border='1px solid #CCCCCC' borderRadius={7} shadow='none' _hover={{border: '1px solid #6785F5'}} _active={{border: '1px solid #6785F5'}} _focus={{border: '1px solid #6785F5', boxShadow: 'none'}} _placeholder={{color: '#acacac'}} onChange={(e) => setPassword(e.target.value)} placeholder="" type='password' value={password} />
                             <Text mb={4} ml='auto' color='#2755F0' fontFamily='SFPROB1' fontSize='14px' _hover={{cursor: 'pointer'}} onClick={() => router.push('/reset-password')}>Forgot password?</Text>
-                            <Button mt={0.5} color='white' fontFamily='SFPROB1' fontSize='15px' bg='radial-gradient(circle, rgba(252,115,105,1) 0%, rgba(250,77,64,1) 74%);' opacity='0.9' border='1px solid #FB453A' _hover={{bg: 'radial-gradient(circle, rgba(252,115,105,1) 0%, rgba(250,77,64,1) 74%);'}} onClick={() => onSubmit()}>Continue</Button>
+                            <Button mt={0.5} color='white' fontFamily='SFPROB1' fontSize='15px' bg='radial-gradient(circle, rgba(46,127,252,1) 0%, rgba(54,180,251,1) 100%)' opacity='0.9' border='1px solid #98BAFD' _hover={{opacity: '0.8', bg: 'radial-gradient(circle, rgba(46,127,252,1) 0%, rgba(54,180,251,1) 100%)'}} onClick={() => onSubmit()}>Continue</Button>
                             {error && 
                                 <Flex align='center'>
                                     <Text as='span' mt={1} mb={-6} color='red.400'><BiError fontSize='15px' /></Text>
