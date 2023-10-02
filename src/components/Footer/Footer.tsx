@@ -2,8 +2,10 @@ import React from 'react';
 import { Flex, Text } from '@chakra-ui/react';
 import { AiFillGithub } from 'react-icons/ai';
 import { BiBrain } from 'react-icons/bi';
+import { useRouter } from 'next/router';
 const Footer:React.FC = () => {
-    
+    const router = useRouter();
+
     return (
         <Flex align='center' direction="column" w='100%' minH='400px' bg='white' opacity='100%' borderTop='2px solid #EBEBEB'>
             <Flex justify='center' direction="column" w='100%' maxW='1400px' px={4}>
@@ -27,8 +29,8 @@ const Footer:React.FC = () => {
                         </Flex>
                         <Flex direction='column' ml={['90px', '170px', '90px', '90px']}>
                             <Text mt={4} color='#0D1835' fontFamily='SFPROBOLD' fontSize='16.5px'>Account</Text>
-                            <Text w='-webkit-fit-content' mt='6px' color='#333' fontFamily='SFPROB1' fontSize='15px' _hover={{cursor: 'pointer', color: '#FB4C40'}}>Login</Text>
-                            <Text w='-webkit-fit-content' mt={1} color='#333' fontFamily='SFPROB1' fontSize='15px' _hover={{cursor: 'pointer', color: '#FB4C40'}}>Get started</Text>
+                            <Text w='-webkit-fit-content' mt='6px' color='#333' fontFamily='SFPROB1' fontSize='15px' _hover={{cursor: 'pointer', color: '#FB4C40'}} onClick={() => router.push('/login')}>Login</Text>
+                            <Text w='-webkit-fit-content' mt={1} color='#333' fontFamily='SFPROB1' fontSize='15px' _hover={{cursor: 'pointer', color: '#FB4C40'}} onClick={() => router.push('/signup')}>Get started</Text>
 
                         </Flex>
                     </Flex>
