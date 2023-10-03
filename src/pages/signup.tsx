@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, Divider, Flex, Input, Text } from '@chakra-ui/react';
 import WindowWrapper from '@/components/WindowWrapper/WindowWrapper';
 import { useRouter } from 'next/router';
 import { BiError } from 'react-icons/bi';
+import { useAuthState, useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { auth } from '@/firebase/clientApp';
 export default function SignUp() {
     const router = useRouter();
 
@@ -10,6 +12,13 @@ export default function SignUp() {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [error, setError] = useState('');
+
+    const [
+        createUserWithEmailAndPassword,
+        user,
+        loading,
+        userError,
+    ] = useCreateUserWithEmailAndPassword(auth);
 
     const onSubmit = () => {
         setError('');
@@ -21,8 +30,18 @@ export default function SignUp() {
             setError('Passwords do not match');
             return;
         }
-        console.log(email, password);
+        createUserWithEmailAndPassword(email, password);
     };
+
+    const [
+        userAuth,
+    ] = useAuthState(auth);
+
+    useEffect(() => {
+        if (userAuth) {
+            router.push('/');
+        }
+    }, [user]);
 
     return (
         <WindowWrapper cls="noise2">
@@ -44,7 +63,7 @@ export default function SignUp() {
                             <Text mt={2} mb={1} fontFamily='SFPROB1' fontSize='16px'>Confirm Password *</Text>
                             <Input mt={0.5} mb={[4,6,6,6]} color='#1b2642' fontFamily='SFPROB1' fontSize='16px' bg='white' border='1px solid #CCCCCC' borderRadius={7} shadow='none' _hover={{border: '1px solid #6785F5'}} _active={{border: '1px solid #6785F5'}} _focus={{border: '1px solid #6785F5', boxShadow: 'none'}} _placeholder={{color: '#acacac'}} onChange={(e) => setConfirmPassword(e.target.value)} placeholder="" type='password' value={confirmPassword} />
                             {/* <Text mb={4} ml='auto' color='#2755F0' fontFamily='SFPROB1' fontSize='14px' _hover={{cursor: 'pointer'}} onClick={() => router.push('/reset-password')}>Forgot password?</Text> */}
-                            <Button mt={0.5} color='white' fontFamily='SFPROB1' fontSize='15px' bg='radial-gradient(circle, rgba(46,127,252,1) 0%, rgba(54,180,251,1) 100%)' opacity='0.9' border='1px solid #98BAFD' _hover={{opacity: '0.8', bg: 'radial-gradient(circle, rgba(46,127,252,1) 0%, rgba(54,180,251,1) 100%)'}} onClick={() => onSubmit()}>Continue</Button>
+                            <Button mt={0.5} color='white' fontFamily='SFPROB1' fontSize='15px' bg='radial-gradient(circle, rgba(46,127,252,1) 0%, rgba(54,180,251,1) 100%)' opacity='0.9' border='1px solid #98BAFD' _hover={{opacity: '0.8', bg: 'radial-gradient(circle, rgba(46,127,252,1) 0%, rgba(54,180,251,1) 100%)'}} isLoading={loading} onClick={() => onSubmit()}>Continue</Button>
                             {error && 
                                 <Flex align='center'>
                                     <Text as='span' mt={1} mb={-6} color='red.400'><BiError fontSize='15px' /></Text>
@@ -58,16 +77,23 @@ export default function SignUp() {
                             </Flex>
                             <Button mt={3} color='#0D1835' fontFamily='SFPRO' fontSize='15px' bg='#FEFEFF' border='1px solid #ccc' shadow='md' _hover={{bg: '#F9F9FA'}}>Create account with Google →</Button>
                             {/* <Button mb={8} color='white' fontFamily='SFPROB1' fontSize='15px' bg='radial-gradient(circle, rgba(252,55,46,1) 0%, rgba(250,140,119,1) 100%)' border='1px solid #FB453A'>Sign in with GitHub →</Button> */}
-                            <Text mt={[2,3,3,3]} mr='auto' mb={['-21px',-4,-4,-4]} ml='auto' color='#6D6D6F' fontFamily='SFPROB1' fontSize='11px' textAlign='center'>By continuing you agree to our Privacy Policy and Terms of Service.</Text>
+                            <Text mt={[2,3,3,3]} mr='auto' mb={['-20.5px',-4,-4,-4]} ml='auto' color='#6D6D6F' fontFamily='SFPROB1' fontSize='11px' textAlign='center'>By continuing you agree to our Privacy Policy and Terms of Service.</Text>
                         </Flex>
                     </Flex>
                 </Flex>
-                <Flex direction='column' display={['none', 'none', 'flex', 'flex']} w='33.33%' h='100%' pt={40}>
+                <Flex align='center' direction='column' display={['none', 'none', 'flex', 'flex']} w='40%' h='100%' pt={40}>
+                    <Flex w='340px' h='200px' p={4} bg='white' borderRadius={15} shadow='md'>
+                        <Text>Explore trending sentiments</Text>
+                    </Flex>
+                    <Flex zIndex={-1} w='340px' h='200px' mt={'-170px'} ml={10} p={4} bg="#f7f7f7" borderRadius={15} shadow='md'>
+                        <Text>Explore trending sentiments</Text>
+                    </Flex>
                     <Text mr={10} ml='auto' color='white' fontFamily='SFPROBOLD' fontSize='24pt' fontStyle='italic'>QUARREL</Text>
                     <Text mr={10} ml='auto' color='white' fontFamily='SFPROBOLD' fontSize='24pt' fontStyle='italic'>QUARREL</Text>
                     <Text mr={10} ml='auto' color='white' fontFamily='SFPROBOLD' fontSize='24pt' fontStyle='italic'>QUARREL</Text>
                     
                 </Flex>
+                
             </Flex>
             
             {/* <GradientWithoutStore cDistance={24} color1='#ff5005' color2='#dbba95' color3='#d0bce1' /> */}

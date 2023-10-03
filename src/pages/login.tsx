@@ -1,22 +1,43 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, Divider, Flex, Input, Text } from '@chakra-ui/react';
 import WindowWrapper from '@/components/WindowWrapper/WindowWrapper';
 import { useRouter } from 'next/router';
 import { BiError } from 'react-icons/bi';
+import { useAuthState, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { auth } from '../firebase/clientApp';
+
 export default function Login() {
     const router = useRouter();
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [error, setError] = useState('');
+    const [error2, setError2] = useState('');
+
+    const [
+        signInWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useSignInWithEmailAndPassword(auth);
+
+    const [
+        userAuth,
+        authLoading,
+    ] = useAuthState(auth);
+
+    useEffect(() => {
+        if (userAuth) {
+            router.push('/');
+        }
+    }, [user]);
 
     const onSubmit = () => {
-        setError('');
+        setError2('');
         if (email === '' || password === '') {
-            setError('Please fill out all fields');
+            setError2('Please fill out all fields');
             return;
         }
-        console.log(email, password);
+        signInWithEmailAndPassword(email, password);
     };
 
     return (
@@ -42,11 +63,11 @@ export default function Login() {
                             <Text mt={3} mb={1} fontFamily='SFPROB1' fontSize='16px'>Password</Text>
                             <Input mt={0.5} mb={2} color='#1b2642' fontFamily='SFPROB1' fontSize='16px' bg='white' border='1px solid #CCCCCC' borderRadius={7} shadow='none' _hover={{border: '1px solid #6785F5'}} _active={{border: '1px solid #6785F5'}} _focus={{border: '1px solid #6785F5', boxShadow: 'none'}} _placeholder={{color: '#acacac'}} onChange={(e) => setPassword(e.target.value)} placeholder="" type='password' value={password} />
                             <Text mb={4} ml='auto' color='#2755F0' fontFamily='SFPROB1' fontSize='14px' _hover={{cursor: 'pointer'}} onClick={() => router.push('/reset-password')}>Forgot password?</Text>
-                            <Button mt={0.5} color='white' fontFamily='SFPROB1' fontSize='15px' bg='radial-gradient(circle, rgba(46,127,252,1) 0%, rgba(54,180,251,1) 100%)' opacity='0.9' border='1px solid #98BAFD' _hover={{opacity: '0.8', bg: 'radial-gradient(circle, rgba(46,127,252,1) 0%, rgba(54,180,251,1) 100%)'}} onClick={() => onSubmit()}>Continue</Button>
+                            <Button mt={0.5} color='white' fontFamily='SFPROB1' fontSize='15px' bg='radial-gradient(circle, rgba(46,127,252,1) 0%, rgba(54,180,251,1) 100%)' opacity='0.9' border='1px solid #98BAFD' _hover={{opacity: '0.8', bg: 'radial-gradient(circle, rgba(46,127,252,1) 0%, rgba(54,180,251,1) 100%)'}} isLoading={loading} onClick={() => onSubmit()}>Continue</Button>
                             {error && 
                                 <Flex align='center'>
                                     <Text as='span' mt={1} mb={-6} color='red.400'><BiError fontSize='15px' /></Text>
-                                    <Text as='span' mt={1} mb={-6} color='red.400' fontFamily='SFPROB1' fontSize='10pt'>&nbsp;{error}</Text>
+                                    <Text as='span' mt={1} mb={-6} color='red.400' fontFamily='SFPROB1' fontSize='10pt'>&nbsp;{error2}</Text>
                                 </Flex>
                             }
                             <Flex align='center' mt={5}>
