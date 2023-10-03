@@ -1,9 +1,8 @@
-::selection {
+/* ::selection {
     background: #FA816E;
     color: black;
     
     /* color: black; */
-}
 
 body {
     background: white;
@@ -12,6 +11,20 @@ body {
 .noise {
     background-image: url('../bg2.svg');
     background-position: 0% 0;
+    background-repeat: no-repeat;
+    background-size: 1440px;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.noise2 {
+    background-image: url('../bg3.svg');
+    background-position: 0% 0;
+    background-repeat: no-repeat;
     background-size: 1440px;
     z-index: -1;
     position: absolute;

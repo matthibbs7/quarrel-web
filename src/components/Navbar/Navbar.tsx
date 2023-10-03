@@ -2,6 +2,8 @@ import React from 'react';
 import { Flex, Text } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import { BiBrain } from 'react-icons/bi';
+import HamburgerMenu from './HamburgerMenu/HamburgerMenu';
+
 const Navbar:React.FC = () => {
     const router = useRouter();
 
@@ -37,6 +39,9 @@ const Navbar:React.FC = () => {
                         <Flex align='center' justify='center' w='110px' h='32px' ml='2' px={3} bg='radial-gradient(circle, rgba(46,127,252,1) 0%, rgba(54,180,251,1) 100%)' borderRadius={7} _hover={{cursor: 'pointer', opacity: '0.9', bg: 'radial-gradient(circle, rgba(46,127,252,1) 0%, rgba(54,180,251,1) 100%)'}}>
                             <Text color='white' fontFamily='SFPROB1' fontSize='14px' onClick={() => router.push('/signup')}>Get started →</Text>
                         </Flex>
+                    </Flex>
+                    <Flex display={['flex', 'flex', 'none', 'none']} ml='auto'>
+                        <HamburgerMenu />
                     </Flex>
                 </Flex>
             </Flex>

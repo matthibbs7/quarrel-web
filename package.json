@@ -24,6 +24,7 @@
     "eslint-plugin-chakra-ui": "^0.9.0",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-unused-imports": "^2.0.0",
+    "firebase": "^10.4.0",
     "framer-motion": "^10.12.17",
     "next": "13.4.7",
     "react": "18.2.0",

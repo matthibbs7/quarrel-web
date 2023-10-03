@@ -34,7 +34,7 @@ const Footer:React.FC = () => {
 
                         </Flex>
                     </Flex>
-                    <Flex align='center' direction='column' w='34%' minW='348px' h='100%' mt={[8,8,0,0]} mb={[10,10,0,0]} ml={[-4,-4,0,0]} p={0}  bg='white'>
+                    <Flex align='center' direction='column' w={['100%', '100%', '34%','34%']} minW='348px' h='100%' mt={[8,8,0,0]} mb={[10,10,0,0]} ml={[-4,-4,0,0]} p={0}  bg='white'>
                         <Flex direction='column' w='100%' h='100%' ml={8} p={8} bg='#F6F7FB' borderRadius={20}>
                             <Text fontFamily='SFPROB1' fontSize='16px'>Give us feedback</Text>
                             <Text mt={2} fontFamily='SFPRO' fontSize='12.5px'>Help us make quarrel better for everyone.</Text>

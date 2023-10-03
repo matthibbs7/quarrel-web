@@ -32,9 +32,9 @@ export default function Login() {
                     <Flex direction='column' w={['368px', '440px']} h='540px' border='1.5px solid #F7F8F9' borderRadius={10} shadow='md' style={{filter: 'none !important;'}}>
                         <Flex direction='column' p={7} bg='#FEFEFF' borderBottom='1px solid clear' borderTopRadius={5}>
                             <Text mt={-2} color='#0D1835' fontFamily='SFPROB1' fontSize='24pt'>Login</Text>
-                            <Text as='span' mb={-3} color='#0D1835' fontFamily='SFPROB1' fontSize='14px'>Don{'\''}t have an account?&nbsp;<Text as='span' textDecoration='underline' _hover={{cursor: 'pointer'}} onClick={() => router.push('/signup')}>Create one →</Text></Text>
+                            <Text as='span' mb={-3} color='#0D1835' fontFamily='SFPROB1' fontSize='14px'>Don{'\''}t have an account?&nbsp;<Text as='span' textDecoration='underline' _hover={{cursor: 'pointer', background: 'radial-gradient(circle, rgba(46,127,252,1) 0%, rgba(54,180,251,1) 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}} onClick={() => router.push('/signup')}>Create one →</Text></Text>
                         </Flex>
-                        <Flex w='100%' h='0.5px' bg='none'>Test</Flex>
+                        <Flex w='100%' h='2px' bg='none'>Test</Flex>
                         <Flex direction='column' mt={0} p={7} bg='#FEFEFF' borderBottomRadius={5}>
                             <Text mb={1} fontFamily='SFPROB1' fontSize='16px'>Email</Text>
                             {/* <Input fontSize='14.5px' bg='#F5F5F3' border='1px solid #F5F5F5' borderRadius={4} _placeholder={{color: '#757575'}} placeholder='Enter your email' /> */}
@@ -56,7 +56,7 @@ export default function Login() {
                             </Flex>
                             <Button mt={5} color='#0D1835' fontFamily='SFPRO' fontSize='15px' bg='#FEFEFF' border='1px solid #ccc' shadow='md' _hover={{bg: '#F9F9FA'}}>Sign in with Google →</Button>
                             {/* <Button mb={8} color='white' fontFamily='SFPROB1' fontSize='15px' bg='radial-gradient(circle, rgba(252,55,46,1) 0%, rgba(250,140,119,1) 100%)' border='1px solid #FB453A'>Sign in with GitHub →</Button> */}
-                            <Text mt={4} mr='auto' mb={1.5} ml='auto' color='#6D6D6F' fontFamily='SFPROB1' fontSize='11px' textAlign='center'>By continuing you agree to our Privacy Policy and Terms of Service.</Text>
+                            <Text mt={4} mr='auto' mb={['-12px','4.5px','4.5px','4.5px']} ml='auto' color='#6D6D6F' fontFamily='SFPROB1' fontSize='11px' textAlign='center'>By continuing you agree to our Privacy Policy and Terms of Service.</Text>
                         </Flex>
                     </Flex>
                 </Flex>
