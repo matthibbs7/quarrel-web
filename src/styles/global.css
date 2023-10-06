@@ -6,6 +6,8 @@
 
 body {
     background: white !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
 }
 
 .noise {
