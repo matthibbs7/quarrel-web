@@ -3,7 +3,7 @@ import { Button, Divider, Flex, Input, Text } from '@chakra-ui/react';
 import WindowWrapper from '@/components/WindowWrapper/WindowWrapper';
 import { useRouter } from 'next/router';
 import { BiError } from 'react-icons/bi';
-import { useAuthState, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useAuthState, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { auth } from '../firebase/clientApp';
 
 export default function Login() {
@@ -21,6 +21,11 @@ export default function Login() {
     ] = useSignInWithEmailAndPassword(auth);
 
     const [
+        signInWithGoogle,
+        GoogleUser,
+    ] = useSignInWithGoogle(auth);
+
+    const [
         userAuth,
         authLoading,
     ] = useAuthState(auth);
@@ -29,7 +34,7 @@ export default function Login() {
         if (userAuth) {
             router.push('/');
         }
-    }, [user]);
+    }, [user, GoogleUser]);
 
     const onSubmit = () => {
         setError2('');
@@ -75,7 +80,7 @@ export default function Login() {
                                 <Text color='#ccc' fontSize='12px'>&nbsp;&nbsp;or&nbsp;&nbsp;</Text>
                                 <Divider borderColor='#CCCCCC' />
                             </Flex>
-                            <Button mt={5} color='#0D1835' fontFamily='SFPRO' fontSize='15px' bg='#FEFEFF' border='1px solid #ccc' shadow='md' _hover={{bg: '#F9F9FA'}}>Sign in with Google →</Button>
+                            <Button mt={5} color='#0D1835' fontFamily='SFPRO' fontSize='15px' bg='#FEFEFF' border='1px solid #ccc' shadow='md' _hover={{bg: '#F9F9FA'}} onClick={() => signInWithGoogle()}>Sign in with Google →</Button>
                             {/* <Button mb={8} color='white' fontFamily='SFPROB1' fontSize='15px' bg='radial-gradient(circle, rgba(252,55,46,1) 0%, rgba(250,140,119,1) 100%)' border='1px solid #FB453A'>Sign in with GitHub →</Button> */}
                             <Text mt={4} mr='auto' mb={['-12px','4.5px','4.5px','4.5px']} ml='auto' color='#6D6D6F' fontFamily='SFPROB1' fontSize='11px' textAlign='center'>By continuing you agree to our Privacy Policy and Terms of Service.</Text>
                         </Flex>

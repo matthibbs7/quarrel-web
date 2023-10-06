@@ -3,7 +3,7 @@ import { Button, Divider, Flex, Input, Text } from '@chakra-ui/react';
 import WindowWrapper from '@/components/WindowWrapper/WindowWrapper';
 import { useRouter } from 'next/router';
 import { BiError } from 'react-icons/bi';
-import { useAuthState, useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useAuthState, useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { auth } from '@/firebase/clientApp';
 export default function SignUp() {
     const router = useRouter();
@@ -19,6 +19,11 @@ export default function SignUp() {
         loading,
         userError,
     ] = useCreateUserWithEmailAndPassword(auth);
+
+    const [
+        signInWithGoogle,
+        GoogleUser,
+    ] = useSignInWithGoogle(auth);
 
     const onSubmit = () => {
         setError('');
@@ -41,7 +46,7 @@ export default function SignUp() {
         if (userAuth) {
             router.push('/');
         }
-    }, [user]);
+    }, [user, GoogleUser]);
 
     return (
         <WindowWrapper cls="noise2">
@@ -75,7 +80,7 @@ export default function SignUp() {
                                 <Text color='#ccc' fontSize='12px'>&nbsp;&nbsp;or&nbsp;&nbsp;</Text>
                                 <Divider borderColor='#CCCCCC' />
                             </Flex>
-                            <Button mt={3} color='#0D1835' fontFamily='SFPRO' fontSize='15px' bg='#FEFEFF' border='1px solid #ccc' shadow='md' _hover={{bg: '#F9F9FA'}}>Create account with Google →</Button>
+                            <Button mt={3} color='#0D1835' fontFamily='SFPRO' fontSize='15px' bg='#FEFEFF' border='1px solid #ccc' shadow='md' _hover={{bg: '#F9F9FA'}} onClick={() => signInWithGoogle()}>Create account with Google →</Button>
                             {/* <Button mb={8} color='white' fontFamily='SFPROB1' fontSize='15px' bg='radial-gradient(circle, rgba(252,55,46,1) 0%, rgba(250,140,119,1) 100%)' border='1px solid #FB453A'>Sign in with GitHub →</Button> */}
                             <Text mt={[2,3,3,3]} mr='auto' mb={['-20.5px',-4,-4,-4]} ml='auto' color='#6D6D6F' fontFamily='SFPROB1' fontSize='11px' textAlign='center'>By continuing you agree to our Privacy Policy and Terms of Service.</Text>
                         </Flex>
