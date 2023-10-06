@@ -17,7 +17,7 @@ const Navbar:React.FC = () => {
                     <BiBrain color='black' fontSize='22pt' />
                     <Text mt={-1} ml={2} color='#070E1D' fontFamily='CUTE' fontSize='24pt' _hover={{cursor: 'pointer'}} onClick={() => router.push('/')}>quarrel.fyi</Text>
                     <Flex display={['none', 'none', 'flex', 'flex']} mr='auto' ml='auto'>
-                        <Flex align='center' justify='center' h='30px' px={2} borderRadius={4} _hover={{cursor: 'pointer', bg: '#F9F9FA'}}>
+                        <Flex align='center' justify='center' h='30px' px={2} borderRadius={4} _hover={{cursor: 'pointer', bg: '#F9F9FA'}} onClick={() => router.push('/explore')}>
                             <Text color='#070E1D' fontFamily='SFPROB1' fontSize='14px'>Explore</Text>
                         </Flex>
                         <Flex align='center' justify='center' h='30px' ml={4} px={2} borderRadius={4} _hover={{cursor: 'pointer', bg: '#F9F9FA'}}>

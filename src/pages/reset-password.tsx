@@ -66,7 +66,7 @@ export default function ResetPassword() {
                                     
                                     {/* <Input fontSize='14.5px' bg='#F5F5F3' border='1px solid #F5F5F5' borderRadius={4} _placeholder={{color: '#757575'}} placeholder='Enter your email' /> */}
                                     <Input mt={0.5} color='#1b2642' fontFamily='SFPRO' fontSize='16.5px' bg='white' border='1px solid #CCCCCC' borderRadius={7} shadow='none' _hover={{border: '1px solid #6785F5'}} _active={{border: '1px solid #6785F5'}} _focus={{border: '1px solid #6785F5', boxShadow: 'none'}} _placeholder={{color: '#acacac'}} onChange={(e) => setEmail(e.target.value)} placeholder="" type='email' value={email} />
-                                    <Text mt={1} mb={5} color='#6D6D6F' fontFamily='SFPROB1' fontSize='12.5px'>Enter your account email above to receive password reset instructions</Text>
+                                    <Text mt={1} mb={5} color='#6D6D6F' fontFamily='SFPROB1' fontSize='11px'>Enter your account email above to receive password reset instructions</Text>
                                     
                                     <Button mt={0.5} mb={4} color='white' fontFamily='SFPROB1' fontSize='15px' bg='radial-gradient(circle, rgba(46,127,252,1) 0%, rgba(54,180,251,1) 100%)' opacity='0.9' border='1px solid #98BAFD' _hover={{opacity: '0.8', bg: 'radial-gradient(circle, rgba(46,127,252,1) 0%, rgba(54,180,251,1) 100%)'}} isLoading={loading} onClick={() => onSubmit()}>{confirmText}</Button>
                                     {(error || error2) && 
@@ -78,7 +78,7 @@ export default function ResetPassword() {
                                 </>
                             ): (
                                 <Flex h={['190px','170px','170px','170px']}>
-                                    <Text>An Email with password reset instructions has been sent!</Text>
+                                    <Text >An Email with password reset instructions has been sent!</Text>
                                 </Flex>
                             )}
                             
