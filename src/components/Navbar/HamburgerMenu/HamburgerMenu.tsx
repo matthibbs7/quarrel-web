@@ -17,7 +17,7 @@ const HamburgerMenu:React.FC = () => {
                             </Flex>
                         </MenuButton>
                         
-                        <MenuList w="370px" minW="0" h='300px' mt={8} p={4}  bg="#121212" border="1px solid #343434" borderRadius='3px' motionProps={{
+                        <MenuList w="300px" minW="0" h='300px' mt={8} p={4}  bg="#121212" border="1px solid #343434" borderRadius='3px' motionProps={{
                             transition: {duration: 0.3},
                             initial: {scale: 0.8},
                             exit: {opacity: 0, scale: 0.9},

@@ -30,7 +30,7 @@ const Footer:React.FC = () => {
                     <Flex justify={['normal', 'normal', 'center', 'center']} direction='row' minW='280px' h='100%' mt={[4,4,0,0]}>
                         <Flex direction='column' ml={[1,1,-10,-10]}>
                             <Text mt={4} color='#0D1835' fontFamily='SFPROBOLD' fontSize='16.5px'>Resources</Text>
-                            <Text w='-webkit-fit-content' mt='6px' color='#333' fontFamily='SFPROB1' fontSize='15px' _hover={{cursor: 'pointer', color: '#FB4C40'}}>Explore</Text>
+                            <Text w='-webkit-fit-content' mt='6px' color='#333' fontFamily='SFPROB1' fontSize='15px' _hover={{cursor: 'pointer', color: '#FB4C40'}} onClick={() => router.push('/explore')}>Explore</Text>
                             <Text w='-webkit-fit-content' mt={1} color='#333' fontFamily='SFPROB1' fontSize='15px' _hover={{cursor: 'pointer', color: '#FB4C40'}}>How it works</Text>
                             <Text w='-webkit-fit-content' mt={1} color='#333' fontFamily='SFPROB1' fontSize='15px' _hover={{cursor: 'pointer', color: '#FB4C40'}}>Debate</Text>
                             <Text w='-webkit-fit-content' mt={1} color='#333' fontFamily='SFPROB1' fontSize='15px' _hover={{cursor: 'pointer', color: '#FB4C40'}}>Learn More</Text>
@@ -51,7 +51,7 @@ const Footer:React.FC = () => {
 
                         </Flex>
                     </Flex>
-                    <Flex align='center' direction='column' w={['100%', '100%', '34%','34%']} minW='348px' h='100%' mt={[8,8,0,0]} mb={[10,10,0,0]} ml={[-4,-4,0,0]} p={0}  bg='white'>
+                    <Flex align='center' direction='column' w={['100%', '100%', '34%','34%']} minW={['0', '0', '348px', '348px']} h='100%' mt={[8,8,0,0]} mb={[10,10,0,0]} ml={[-4,-4,0,0]} p={0}  bg='white'>
                         <Flex direction='column' w='100%' h='100%' ml={8} p={8} bg='#F6F7FB' borderRadius={20}>
                             <Text fontFamily='SFPROB1' fontSize='16px'>Give us feedback</Text>
                             <Text mt={2} fontFamily='SFPRO' fontSize='12.5px'>Help us make quarrel better for everyone.</Text>
