@@ -44,8 +44,14 @@ body {
     z-index: -1;
     position: absolute;
     max-height: 600px;
-    margin-top: -80px;
+    margin-top: -150px;
     background-color: #fff;
+}
+
+.homeBg {
+    z-index: -1;
+    height: 1000px !important;
+    background: linear-gradient(150deg, rgba(120, 86, 255, 0.50) 3.73%, rgba(202, 219, 253, 0.50) 15.66%, rgba(213, 202, 253, 0.50) 23.05%, rgba(213, 202, 253, 0.50) 31.04%, rgba(202, 204, 253, 0.50) 47.62%, rgba(213, 202, 253, 0.50) 61.07%, rgba(234, 202, 253, 0.50) 68.98%, rgba(202, 219, 253, 0.50) 75.32%, rgba(120, 86, 255, 0.50) 97.26%), var(--color-gray-0, #FFF);
 }
 
 /* .noise {
