@@ -58,7 +58,7 @@ export default function ResetPassword() {
                     
                     </Flex>
                     <Flex zIndex={5} align='center' justify='center' direction='column' w={['100%', '100%', '66.66%', '66.66%']} h='100%' bg='rgba(255, 255, 255, 0.2);' border='1px solid rgba(255, 255, 255, 0.1);' shadow='0 4px 30px rgba(0, 0, 0, 0.1);' backdropFilter='blur(0.4px);'>
-                        <Flex direction='column' w={['368px', '440px']} h={['350px','336px', '336px', '336px']} border='1.5px solid #F7F8F9' borderRadius={10} shadow='md' style={{filter: 'none !important;'}}>
+                        <Flex direction='column' w={['368px', '440px']} h={['330px','330px', '330px', '330px']} border='1.5px solid #F7F8F9' borderRadius={10} shadow='md' style={{filter: 'none !important;'}}>
                             <Flex direction='column' p={7} bg='#FEFEFF' borderBottom='1px solid clear' borderTopRadius={5}>
                                 <Text mt={-2} color='#0D1835' fontFamily='SFPROB1' fontSize='24pt'>Reset Password</Text>
                                 <Text as='span' mb={-3} color='#0D1835' fontFamily='SFPROB1' fontSize='14px'>Back to&nbsp;<Text as='span' textDecoration='underline' _hover={{cursor: 'pointer', background: 'radial-gradient(circle, rgba(46,127,252,1) 0%, rgba(54,180,251,1) 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}} onClick={() => router.push('/login')}>Login →</Text></Text>
